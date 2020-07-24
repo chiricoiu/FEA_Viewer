@@ -2,8 +2,6 @@
 
 __author__ = "Christian Hiricoiu"
 __email__ = "christian.hiricoiu@gmail.com"
-__licence__ = "GPL"
-__version__ = "1.0"
 
 """
 Programme de visualisation d'analyse de calcul éléments finis.
