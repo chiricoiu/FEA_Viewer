@@ -2,8 +2,6 @@
 
 __author__ = "Christian Hiricoiu"
 __email__ = "christian.hiricoiu@gmail.com"
-__licence__ = "GPL"
-__version__ = "1.0"
 
 """
 Ce programme permet de générer un mapping file pour le fuselage du P51.
