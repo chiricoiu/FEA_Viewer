@@ -2,8 +2,6 @@
 
 __author__ = "Christian Hiricoiu"
 __email__ = "christian.hiricoiu@gmail.com"
-__licence__ = "GPL"
-__version__ = "1.0"
 
 """
 Ce programme récupère en entrée 2 database créées par le programme '02_FEA-Post-Processing-Database-Generator':
