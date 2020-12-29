@@ -2,6 +2,8 @@
 
 __author__ = "Christian Hiricoiu"
 __email__ = "christian.hiricoiu@gmail.com"
+__licence__ = "GPL"
+__version__ = "1.0"
 
 """
 Programme de visualisation d'analyse de calcul éléments finis.
@@ -36,6 +38,7 @@ import numpy as np
 import pandas as pd
 import pptk  # https://github.com/heremaps/pptk/blob/master/pptk/viewer/viewer.py
 import win32gui
+import win32con
 import time
 
 """ import des librairies internes """
@@ -208,6 +211,7 @@ class MainWindow(QtWidgets.QMainWindow, designer.Ui_MainWindow):
 
             self.viewer_widget = QtWidgets.QWidget(self.viewer_frame)
             hwnd = win32gui.FindWindowEx(0, 0, None, "viewer")
+            win32gui.ShowWindow(hwnd, win32con.SW_MAXIMIZE)
             self.window = QtGui.QWindow.fromWinId(hwnd)
             self.window.setFlags(QtCore.Qt.FramelessWindowHint)
             self.windowcontainer = self.createWindowContainer(self.window, self.viewer_widget)
@@ -235,7 +239,7 @@ def path_database():
 def load_clouds(db_path, nb_ply):
     try:
         global listofclouds
-        p = Pool(processes=cpu_count())
+        p = Pool(processes=cpu_count()-5)
         data = p.starmap(load_cloud, zip(repeat(db_path), range(1, nb_ply + 1)))
         for cloudelement in data:
             listofclouds.append(cloudelement)
