@@ -1,3 +1,3 @@
-# DTC_Workflow_Calcul_Avion
+#FEA Viewer
 
 ![DTC_Screenshot](img/img.png)
